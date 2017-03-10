@@ -10,7 +10,9 @@ void PingTask::run()
  {
      pingobject->set_threadstatus("run");
      QProcess * process = new QProcess();
-     QString command = "/sbin/ping -c 1 -t 3 " + pingobject->get_host();
+    //Linux
+     QString command = "ping -c 1 -t 3 " + pingobject->get_host();
+    //TODO: Windows
 
      pingobject->inc_pingssent();
      pingobject->inc_seqnr();
